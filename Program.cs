@@ -1,4 +1,5 @@
 using Jaberish.Middlewares;
+using Jaberish.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,7 @@ builder.Services.AddCors(options =>
 });
 
 // Services
-//builder.Services.AddScoped<IProdutoService, ProdutoService>();
+builder.Services.AddScoped<IGeneratorService, GeneratorService>();
 
 // Repositories
 // builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
