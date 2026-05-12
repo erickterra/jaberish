@@ -51,6 +51,7 @@ namespace Jaberish.Services
            return field;
        })
        .ToList();
+
             var random = new Random();
             var retorno = new List<Dictionary<string, object>>();
 
@@ -62,7 +63,37 @@ namespace Jaberish.Services
                     switch (field.Tipo)
                     {
                         case Tipos.String:
-                            resultado[field.Nome] = Utils.RandomString(field.Min ?? 1, field.Max ?? 10);
+                            resultado[field.Nome] = Utils.RandomString(field.Min ?? 1, (field.Max ?? 10) + 1);
+                            break;
+
+                        case Tipos.Nome:
+                        case Tipos.Name:
+                            int amt = random.Next(field.Min ?? 1, (field.Max ?? 1) + 1);
+                            string nome = "";
+                            for (int j = 0; j < amt; j++)
+                            {
+                                if (j > 0)
+                                {
+                                    nome += " ";
+                                }
+                                nome += Utils.NomeAleatorio();
+                            }
+                            resultado[field.Nome] = nome;
+                            break;
+
+                        case Tipos.Sobrenome:
+                        case Tipos.Surname:
+                            int amt2 = random.Next(field.Min ?? 1, (field.Max ?? 1) + 1);
+                            string sobrenome = "";
+                            for (int j = 0; j < amt2; j++)
+                            {
+                                if (j > 0)
+                                {
+                                    sobrenome += " ";
+                                }
+                                sobrenome += Utils.SobreomeAleatorio();
+                            }
+                            resultado[field.Nome] = sobrenome;
                             break;
 
                         case Tipos.Integer:

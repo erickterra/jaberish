@@ -15,6 +15,8 @@ public class Field
 public enum Tipos
 {
     String,
+    Nome, Name, //PT:Mesmo Tipo, idioma diferente EN: Same Type just different language
+    Sobrenome, Surname, //PT:Mesmo Tipo, idioma diferente EN: Same Type just different language
     Integer,
     Decimal,
     Boolean,
