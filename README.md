@@ -270,7 +270,9 @@ Sobrenome String 5 20;
 Idade Integer 18 80;
 Cargo Enum (Junior,Pleno,Senior,Especialista);
 Salario Decimal 1500 12000;
-Ativo Boolean 0 1
+Ativo Boolean;
+DataContratacao DateTime;
+
 ```
 
 Resposta:
@@ -282,7 +284,8 @@ Resposta:
   "Idade": 29,
   "Cargo": "Senior",
   "Salario": 7854.22,
-  "Ativo": true
+  "Ativo": true,
+  "DataContratacao": "2026-08-05T09:57:14.1613204-03:00"
 }
 ```
 
@@ -587,7 +590,8 @@ LastName String 5 20;
 Age Integer 18 80;
 Role Enum (Junior,MidLevel,Senior,Specialist);
 Salary Decimal 1500 12000;
-Active Boolean 0 1
+Active Boolean;
+HireDate DateTime
 ```
 
 Output:
@@ -599,7 +603,8 @@ Output:
   "Age": 29,
   "Role": "Senior",
   "Salary": 7854.22,
-  "Active": true
+  "Active": true,
+  "HireDate": "2026-08-05T09:57:14.1613204-03:00"
 }
 ```
 
