@@ -2,6 +2,7 @@
 using Jaberish.Infra;
 using Jaberish.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 namespace Jaberish.Controllers;
 
 [ApiController]
@@ -15,11 +16,16 @@ public class GeneratorController : ControllerBase
     }
 
     [HttpPost]
-    public List<Dictionary<string, object>> Generate([FromBody] string estrutura, int quantidade)
+    public List<Dictionary<string, object>> Generate([FromBody] string? estrutura, int quantidade)
     {
         if (quantidade <= 0 )
         {
             quantidade = 1;
+        }
+
+        if (estrutura.IsNullOrEmpty())
+        {
+            estrutura = "Teste String 10 100";
         }
 
        var fields =
