@@ -7,7 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 namespace Jaberish.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api")]
 public class GeneratorController : ControllerBase
 {
 
