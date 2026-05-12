@@ -95,6 +95,7 @@ Resposta:
 ```
 
 O Integer será um número entre 18 e 60.
+
 ---
 
 # Tipo `Decimal`
@@ -110,7 +111,7 @@ NomeCampo Decimal 1000 5000
 Entrada:
 
 ```txt
-Salario Double 1000 5000
+Salario Decimal 1000 5000
 ```
 
 Resposta:
@@ -120,7 +121,9 @@ Resposta:
   "Salario": 3487.42
 }
 ```
+
 O Decimal será um Número entre 1000 e 5000, com 2 casas decimais aleatórias; 
+
 ---
 
 # Tipo `Boolean`
@@ -146,7 +149,9 @@ Resposta:
   "Ativo": true
 }
 ```
+
 Será um Bool aleatoriamente true e false; 
+
 ---
 
 # Tipo `Enum`
@@ -264,7 +269,7 @@ Nome String 5 15;
 Sobrenome String 5 20;
 Idade Integer 18 80;
 Cargo Enum (Junior,Pleno,Senior,Especialista);
-Salario Double 1500 12000;
+Salario Decimal 1500 12000;
 Ativo Boolean 0 1
 ```
 
@@ -408,7 +413,7 @@ Integer will be a value between 18 and 60
 
 ---
 
-# `Double` Type
+# `Decimal` Type
 
 ## Format
 
@@ -581,7 +586,7 @@ Name String 5 15;
 LastName String 5 20;
 Age Integer 18 80;
 Role Enum (Junior,MidLevel,Senior,Specialist);
-Salary Double 1500 12000;
+Salary Decimal 1500 12000;
 Active Boolean 0 1
 ```
 
