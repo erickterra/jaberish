@@ -33,12 +33,75 @@ NomeCampo Tipo Min Max; NomeCampo Tipo Min Max
 
 | Tipo | Descrição |
 |---|---|
+| `Nome` | Gera nomes aleatórios |
+| `Sobrenome` | Gera sobrenomes aleatórios |
 | `String` | Texto aleatório |
 | `Integer` | Número inteiro aleatório |
 | `Decimal` | Número decimal aleatório |
 | `Boolean` | Verdadeiro ou falso |
 | `DateTime` | Data aleatória |
 | `Enum` | Escolhe aleatoriamente um valor entre uma lista fornecida |
+
+
+---
+
+# Tipo `Nome`
+
+O tipo `Nome` gera nomes aleatórios a partir de uma lista interna de nomes próprios.
+
+## Formato
+
+```txt
+NomeCampo Nome Min Max
+```
+
+## Exemplo
+
+Entrada:
+
+```txt
+NomeCompleto Nome 1 2
+```
+
+Resposta:
+
+```json
+{
+  "NomeCompleto": "Lucas Henrique"
+}
+```
+
+A API irá gerar entre `Min` e `Max` nomes aleatórios concatenados.
+
+---
+
+# Tipo `Sobrenome`
+
+O tipo `Sobrenome` gera sobrenomes aleatórios a partir de uma lista interna de sobrenomes.
+
+## Formato
+
+```txt
+NomeCampo Sobrenome Min Max
+```
+
+## Exemplo
+
+Entrada:
+
+```txt
+SobrenomeCompleto Sobrenome 1 2
+```
+
+Resposta:
+
+```json
+{
+  "SobrenomeCompleto": "Silva Oliveira"
+}
+```
+
+A API irá gerar entre `Min` e `Max` sobrenomes aleatórios concatenados.
 
 ---
 
@@ -122,7 +185,7 @@ Resposta:
 }
 ```
 
-O Decimal será um Número entre 1000 e 5000, com 2 casas decimais aleatórias; 
+O Decimal será um Número entre 1000 e 5000, com 2 casas decimais aleatórias.
 
 ---
 
@@ -150,7 +213,7 @@ Resposta:
 }
 ```
 
-Será um Bool aleatoriamente true e false; 
+Será um Bool aleatoriamente true e false.
 
 ---
 
@@ -231,7 +294,7 @@ Nome String 10 20; Idade Integer 18 60
 
 ```ts
 const response = await api.post(
-  '/api/Generator?quantidade=10',
+  '/api/generate?quantidade=10',
   JSON.stringify("Nome String 10 20; Idade Integer 18 60"),
   {
     headers: {
@@ -265,22 +328,21 @@ const response = await api.post(
 Entrada:
 
 ```txt
-Nome String 5 15;
-Sobrenome String 5 20;
+Nome Nome 1 2;
+Sobrenome Sobrenome 1 2;
 Idade Integer 18 80;
 Cargo Enum (Junior,Pleno,Senior,Especialista);
 Salario Decimal 1500 12000;
 Ativo Boolean;
 DataContratacao DateTime;
-
 ```
 
 Resposta:
 
 ```json
 {
-  "Nome": "wjkudcs",
-  "Sobrenome": "whxjhxcwxklça",
+  "Nome": "Lucas Henrique",
+  "Sobrenome": "Silva Oliveira",
   "Idade": 29,
   "Cargo": "Senior",
   "Salario": 7854.22,
@@ -298,7 +360,7 @@ Resposta:
 - `Min` e `Max` devem ser números válidos
 - O nome do campo não pode conter espaços
 - Tipos inválidos serão ignorados ou retornarão erro
-- Valores do `Enum` devem ser separados por vírgula e dão deve haver espaços dentro do `()`
+- Valores do `Enum` devem ser separados por vírgula e não deve haver espaços dentro do `()`
 
 ---
 
@@ -310,7 +372,6 @@ Resposta:
 - Desenvolvimento frontend
 - Protótipos rápidos
 - Testes de performance
-
 
 ---
 
@@ -351,12 +412,74 @@ FieldName Type Min Max; FieldName Type Min Max
 
 | Type | Description |
 |---|---|
+| `Name` | Generates random names |
+| `Surname` | Generates random surnames |
 | `String` | Random text |
 | `Integer` | Random integer number |
 | `Decimal` | Random decimal number |
 | `Boolean` | True or false |
 | `DateTime` | Random date |
 | `Enum` | Randomly selects a value from a list |
+
+---
+
+# `Name` Type
+
+The `Name` type generates random first names from an internal name list.
+
+## Format
+
+```txt
+FieldName Name Min Max
+```
+
+## Example
+
+Input:
+
+```txt
+FullName Name 1 2
+```
+
+Output:
+
+```json
+{
+  "FullName": "Lucas Henrique"
+}
+```
+
+The API will generate between `Min` and `Max` random names concatenated together.
+
+---
+
+# `Surname` Type
+
+The `Surname` type generates random surnames from an internal surname list.
+
+## Format
+
+```txt
+FieldName Surname Min Max
+```
+
+## Example
+
+Input:
+
+```txt
+FullSurname Surname 1 2
+```
+
+Output:
+
+```json
+{
+  "FullSurname": "Silva Oliveira"
+}
+```
+
+The API will generate between `Min` and `Max` random surnames concatenated together.
 
 ---
 
@@ -412,7 +535,7 @@ Output:
 }
 ```
 
-Integer will be a value between 18 and 60
+Integer will be a value between 18 and 60.
 
 ---
 
@@ -440,7 +563,7 @@ Output:
 }
 ```
 
-Decimal will be a number between 1000 and 5000 with 2 random decimal places
+Decimal will be a number between 1000 and 5000 with 2 random decimal places.
 
 ---
 
@@ -468,7 +591,7 @@ Output:
 }
 ```
 
-Will be a Bool randomly true or false;  
+Will be a Bool randomly true or false.
 
 ---
 
@@ -504,22 +627,7 @@ Output:
 }
 ```
 
-The API will randomly select one of the provided values
-
----
-## Valid Format
-
-```txt
-Type Enum (A,B,C,D)
-```
-
-## Invalid Format
-
-```txt
-Type Enum (A, B, C, D)
-```
-
-The invalid format contains spaces inside the parentheses.
+The API will randomly select one of the provided values.
 
 ---
 
@@ -551,7 +659,7 @@ Name String 10 20; Age Integer 18 60
 
 ```ts
 const response = await api.post(
-  '/api/Generator?quantidade=10',
+  '/api/generate?quantidade=10',
   JSON.stringify("Name String 10 20; Age Integer 18 60"),
   {
     headers: {
@@ -585,8 +693,8 @@ const response = await api.post(
 Input:
 
 ```txt
-Name String 5 15;
-LastName String 5 20;
+Name Name 1 2;
+LastName Surname 1 2;
 Age Integer 18 80;
 Role Enum (Junior,MidLevel,Senior,Specialist);
 Salary Decimal 1500 12000;
@@ -598,8 +706,8 @@ Output:
 
 ```json
 {
-  "Name": "wjkudcs",
-  "LastName": "whxjhxcwxklça",
+  "Name": "Lucas Henrique",
+  "LastName": "Silva Oliveira",
   "Age": 29,
   "Role": "Senior",
   "Salary": 7854.22,
@@ -629,4 +737,3 @@ Output:
 - Frontend development
 - Rapid prototyping
 - Performance testing
-
