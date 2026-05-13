@@ -1,7 +1,7 @@
 # Jaberish API
 
 API para geração de dados aleatórios baseada em campos dinâmicos.
-Disponível em [https://jaberish.onrender.com/](https://jaberish.onrender.com/swagger/index.html)]
+Disponível em [https://jaberish.onrender.com/](https://jaberish.onrender.com/swagger/index.html)
 
 ---
 
@@ -381,7 +381,7 @@ Resposta:
 # Jaberish API
 
 API for generating random data based on dynamic field definitions.
-Available at [https://jaberish.onrender.com/](https://jaberish.onrender.com/swagger/index.html)]
+Available at [https://jaberish.onrender.com/](https://jaberish.onrender.com/swagger/index.html)
 
 ---
 
