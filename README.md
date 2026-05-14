@@ -1,5 +1,26 @@
 
-[English Version of Documentation](#english-version)
+# Table of Contents
+
+| Português | English |
+|---|---|
+| [Jaberish API](#jaberish-api) | [Jaberish API](#jaberish-api-1) |
+| [Como funciona](#como-funciona) | [How it works](#how-it-works) |
+| [Estrutura do comando](#estrutura-do-comando) | [Command Structure](#command-structure) |
+| [Tipos suportados](#tipos-suportados) | [Supported Types](#supported-types) |
+| [Tipo Nome](#tipo-nome) | [Name Type](#name-type) |
+| [Tipo Sobrenome](#tipo-sobrenome) | [Surname Type](#surname-type) |
+| [Tipo String](#tipo-string) | [String Type](#string-type) |
+| [Tipo Integer](#tipo-integer) | [Integer Type](#integer-type) |
+| [Tipo Decimal](#tipo-decimal) | [Decimal Type](#decimal-type) |
+| [Tipo Boolean](#tipo-boolean) | [Boolean Type](#boolean-type) |
+| [Tipo Enum](#tipo-enum) | [Enum Type](#enum-type) |
+| [Como consumir a API](#como-consumir-a-api) | [How to consume the API](#how-to-consume-the-api) |
+| [Body da requisição](#body-da-requisição) | [Request Body](#request-body) |
+| [Exemplo usando Axios](#exemplo-usando-axios) | [Axios Example](#axios-example) |
+| [Resposta esperada](#resposta-esperada) | [Expected Response](#expected-response) |
+| [Exemplo completo](#exemplo-completo) | [Complete Example](#complete-example) |
+| [Regras importantes](#regras-importantes) | [Important Rules](#important-rules) |
+| [Casos de uso](#casos-de-uso) | [Use Cases](#use-cases) |
 
 # Jaberish API
 
