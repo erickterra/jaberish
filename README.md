@@ -320,7 +320,7 @@ Nome String 10 20; Idade Integer 18 60
 ```ts
 const response = await api.post(
   '/api/generate?quantidade=10',
-  JSON.stringify("Nome String 10 20; Idade Integer 18 60"),
+  JSON.stringify("Nome Nome 1 2; Idade Integer 18 60"),
   {
     headers: {
       'Content-Type': 'application/json'
@@ -336,11 +336,11 @@ const response = await api.post(
 ```json
 [
   {
-    "Nome": "abcxyzqwe",
+    "Nome": "Thomas",
     "Idade": 25
   },
   {
-    "Nome": "lmnopqrs",
+    "Nome": "Wesley William",
     "Idade": 41
   }
 ]
@@ -686,7 +686,7 @@ Name String 10 20; Age Integer 18 60
 ```ts
 const response = await api.post(
   '/api/generate?quantidade=10',
-  JSON.stringify("Name String 10 20; Age Integer 18 60"),
+  JSON.stringify("Name Name 1 2; Age Integer 18 60"),
   {
     headers: {
       'Content-Type': 'application/json'
@@ -702,11 +702,11 @@ const response = await api.post(
 ```json
 [
   {
-    "Name": "abcxyzqwe",
+    "Name": "Thomas",
     "Age": 25
   },
   {
-    "Name": "lmnopqrs",
+    "Name": "Wesley William",
     "Age": 41
   }
 ]
